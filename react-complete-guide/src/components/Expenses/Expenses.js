@@ -16,17 +16,21 @@ const Expenses = props => {
     return expenseYear === enteredFilter;
   });
 
+  const emptyExpenses = <p>No expenses found.</p>;
+
+  const expensesContent = filteredExpenses.map((expense) => (
+    <ExpenseItem
+      key={expense.id}
+      title={expense.title}
+      price={expense.amount}
+      date={expense.date}
+    />
+  ));
+
   return (
     <Card className="expenses">
       <ExpensesFilter selectedFilter={enteredFilter} onFilterChange={filterHandler} />
-      {filteredExpenses.map((expense) => (
-        <ExpenseItem
-          key={expense.id}
-          title={expense.title}
-          price={expense.amount}
-          date={expense.date}
-        />
-      ))}
+      { expensesContent.length ? expensesContent : emptyExpenses }
     </Card>
   );
 }
