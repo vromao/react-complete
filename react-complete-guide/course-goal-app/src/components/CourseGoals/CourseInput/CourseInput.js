@@ -1,7 +1,7 @@
 import { useState } from 'react';
 // import styled from 'styled-components';
 import Button from '../../UI/Button/Button';
-import './CourseInput.css';
+import styles from './CourseInput.module.css';
 
 // styled components approach
 // const FormControl = styled.div`
@@ -60,7 +60,8 @@ const CourseInput = props => {
         <input type="text" onChange={goalInputChangeHandler} />
       </FormControl> */
       }
-      <div className={`form-control ${!isValid? 'invalid' : ''}`}>
+      {/* styles['form-control'] are necessary because of the dashed class name. To remove we can use a cammel-case name like formControl */}
+      <div className={`${styles['form-control']} ${!isValid && styles.invalid}`}>
         <label>Course Goal</label>
         <input type="text" onChange={goalInputChangeHandler} />
       </div>
