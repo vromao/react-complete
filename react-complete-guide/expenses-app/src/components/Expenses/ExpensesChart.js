@@ -2,7 +2,7 @@ import Chart from "../Chart/Chart";
 
 const ExpensesChart = (props) => {
   const chartDataPoints = [
-    { id: Math.random().toString(), label: 'Jan', value: 0 },
+    {  id: Math.random().toString(), label: 'Jan', value: 0 },
     {  id: Math.random().toString(), label: 'Feb', value: 0 },
     {  id: Math.random().toString(), label: 'Mar', value: 0 },
     {  id: Math.random().toString(), label: 'Apr', value: 0 },
