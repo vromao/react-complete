@@ -1,0 +1,21 @@
+.users-card {
+  width: 100%;
+  max-width: 768px;
+  padding: 1em;
+}
+
+.users-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.user-list__item {
+  margin: 0 0 .5em;
+  padding: .5em;
+  border: solid 1px #CECCCE;
+}
+
+.user-list__item:last-child {
+  margin-bottom: 0;
+}

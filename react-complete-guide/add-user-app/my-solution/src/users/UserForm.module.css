@@ -1,0 +1,24 @@
+.user-form {
+  flex: 1;
+  margin: 2em 0;
+  max-width: 768px;
+  min-width: 200px;
+  width: 100%;
+  padding: 1em;
+}
+
+.user-form__group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: .5em;
+}
+
+.user-form__group label {
+  font-weight: bold;
+  margin-bottom: .25em;
+}
+
+.user-form__group input {
+  flex-basis: 100%;
+  padding: .5em;
+}
