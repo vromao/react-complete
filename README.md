@@ -115,3 +115,20 @@ console.log(newPerson); // { age: 28, name: 'Vinícius' }
 ```
 
 No exemplo acima podemos ver que a property **name** se mantem com o valor original pois aqui o spread realmente acaba copiando os valores para o novo objeto criado na váriavel constante **newPerson**. O ideal é nunca alterar valor de arrays e objetos já atribuidos já que é boa pratica que os mesmos sejam imutáveis.
+
+## React Tips
+
+### UseEffect
+O `UseEffect` é um dos hooks mais importantes e que permite com que nós possamos interagir com side-effects dentro do componente React. Esses side-effects podem ser ações oriundas de interação na interface, para quando um dado, estado ou props muda, requisições HTTP, etc. É executado após o componente ser renderizado (paint e etc) e após todo re-render (isso também é definido e controlado pelas dependências, podendo mudar este comportamento).
+
+#### O que colocar nas dependências?
+Como "regra" ou boa pratica geral, nós devemos usar como dependência tudo que estivermos usando dentro do nosso `UseEffect` **se** oq vamos colocar pode sofrar mudanças devido ao re-render do componente em questão. Como nota, não precisamos declarar: 
+- state updating functions (o React se garante que essas funções nunca mudam, assim não é necessário declarar)
+- uso de APIs ou funções "built-in" (como localstorage, fetch(), ou qualquer outra coisa que não seja do mundo React)
+- variáveis ou funções definidas por nós fora do componente ou como auxiliares dentro do `useEffect`
+
+#### Cleanup function
+Dentro do ciclo de vida do `UseEffect` existe a função de cleanup. O comportamento dessa função é:
+- Não é executada quando o componente é montado pela primeira vez
+- Será executada toda vez após o primeiro render **e** quando o componente for **desmontado**
+- **Sempre** é executada antes do conteúdo da função do `UseEffect`
