@@ -132,3 +132,6 @@ Dentro do ciclo de vida do `UseEffect` existe a função de cleanup. O comportam
 - Não é executada quando o componente é montado pela primeira vez
 - Será executada toda vez após o primeiro render **e** quando o componente for **desmontado**
 - **Sempre** é executada antes do conteúdo da função do `UseEffect`
+
+### UseReducer
+- Se esta manipulando um (ou varios) state que **depende de outro state** em um cenário complexo, vale a pena utilizar o `UseReducer` no lugar.
